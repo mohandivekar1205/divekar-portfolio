@@ -25,7 +25,7 @@ const Index: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Trigger once on load
+    // Trigger once on load to reveal elements initially visible
     handleScroll();
     
     return () => {
