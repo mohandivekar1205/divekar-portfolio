@@ -1,12 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React, { useEffect } from 'react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import Education from '@/components/Education';
+import Projects from '@/components/Projects';
+import Experience from '@/components/Experience';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+
+const Index: React.FC = () => {
+  useEffect(() => {
+    // Initialize reveal animations on scroll
+    const handleScroll = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Trigger once on load
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <HeroSection />
+        <Education />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
