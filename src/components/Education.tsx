@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { Calendar, Award, GraduationCap } from 'lucide-react';
+import { Calendar, Award, GraduationCap, Code } from 'lucide-react';
 
 const Education: React.FC = () => {
   useEffect(() => {
@@ -34,11 +34,13 @@ const Education: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="section-title mx-auto">Education & Certifications</h2>
           <p className="mt-4 text-lg text-foreground/70 max-w-3xl mx-auto">
-            My academic journey and professional certifications that have shaped my expertise
+            My academic journey and professional achievements that have shaped my expertise
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Education */}
+        <h3 className="text-xl font-bold mb-8 border-b border-border pb-2">Education</h3>
+        <div className="mb-16">
           <div className="glass rounded-xl p-8 reveal card-hover">
             <div className="flex items-start">
               <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg">
@@ -59,8 +61,12 @@ const Education: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          <div className="glass rounded-xl p-8 reveal card-hover" style={{ transitionDelay: '0.2s' }}>
+        </div>
+        
+        {/* Certifications */}
+        <h3 className="text-xl font-bold mb-8 border-b border-border pb-2">Certifications & Achievements</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="glass rounded-xl p-8 reveal card-hover">
             <div className="flex items-start">
               <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg">
                 <Award className="h-6 w-6 text-primary" />
@@ -75,6 +81,26 @@ const Education: React.FC = () => {
                 <p className="mt-4 text-foreground/80">
                   Achieved Oracle's professional certification that validates extensive knowledge in Java programming, 
                   object-oriented design principles, and enterprise application development using Java technologies.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="glass rounded-xl p-8 reveal card-hover" style={{ transitionDelay: '0.2s' }}>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg">
+                <Code className="h-6 w-6 text-primary" />
+              </div>
+              <div className="ml-5">
+                <h3 className="text-xl font-bold text-foreground">Data Structures & Algorithms</h3>
+                <p className="text-primary/80 font-medium">Competitive Programming</p>
+                <div className="flex items-center mt-2 text-sm text-foreground/70">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  <span>2022 - Present</span>
+                </div>
+                <p className="mt-4 text-foreground/80">
+                  Successfully solved 300+ DSA problems in Java across multiple platforms, demonstrating strong 
+                  problem-solving skills, algorithmic thinking, and efficient code implementation.
                 </p>
               </div>
             </div>

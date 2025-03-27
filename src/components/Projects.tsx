@@ -28,6 +28,14 @@ const Projects: React.FC = () => {
       technologies: ["Java", "Spring Cloud", "Kafka", "Docker", "Kubernetes", "WebSockets"],
       icon: <MessageSquare className="h-6 w-6" />,
       color: "from-blue-500/20 to-blue-500/10"
+    },
+    {
+      id: 3,
+      title: "AI Recommendation System",
+      description: "Intelligent recommendation engine leveraging machine learning to provide personalized content suggestions based on user behavior and preferences.",
+      technologies: ["TensorFlow", "Python", "JavaScript", "React", "Flask", "MongoDB"],
+      icon: <Code className="h-6 w-6" />,
+      color: "from-purple-500/20 to-purple-500/10"
     }
   ]);
 
